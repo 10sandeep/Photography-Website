@@ -31,8 +31,8 @@ const About = () => {
   }, []);
 
   const stats = [
-    { icon: <Camera size={24} />, value: "10+", label: "Years Experience" },
-    { icon: <Award size={24} />, value: "35", label: "Awards Won" },
+    { icon: <Camera size={24} />, value: "5+", label: "Years Experience" },
+    // { icon: <Award size={24} />, value: "35", label: "Awards Won" },
     { icon: <Heart size={24} />, value: "250+", label: "Happy Clients" },
     { icon: <Clock size={24} />, value: "1200+", label: "Photo Sessions" },
   ];
