@@ -1,181 +1,154 @@
 import React, { useEffect, useRef } from "react";
-import { Camera, Award, Clock, Heart } from "lucide-react";
-import ABOUTME from '../assets/photography 3.jpg'
+import { Camera, Heart, Clock } from "lucide-react";
+import FOUNDER from '../assets/founder.jpg'
+import COFOUNDER from '../assets/cofounder.jpg'
 
 const About = () => {
-  const statsRef = useRef(null);
-  const imageRef = useRef(null);
-  const contentRef = useRef(null);
+  const studioRef = useRef(null);
+  const foundersRef = useRef(null);
 
+  // Simple animation on scroll
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("animate-in");
+            entry.target.classList.add("fade-in");
           }
         });
       },
       { threshold: 0.2 }
     );
 
-    if (statsRef.current) observer.observe(statsRef.current);
-    if (imageRef.current) observer.observe(imageRef.current);
-    if (contentRef.current) observer.observe(contentRef.current);
+    if (studioRef.current) observer.observe(studioRef.current);
+    if (foundersRef.current) observer.observe(foundersRef.current);
 
     return () => {
-      if (statsRef.current) observer.unobserve(statsRef.current);
-      if (imageRef.current) observer.unobserve(imageRef.current);
-      if (contentRef.current) observer.unobserve(contentRef.current);
+      if (studioRef.current) observer.unobserve(studioRef.current);
+      if (foundersRef.current) observer.unobserve(foundersRef.current);
     };
   }, []);
 
   const stats = [
     { icon: <Camera size={24} />, value: "5+", label: "Years Experience" },
-    // { icon: <Award size={24} />, value: "35", label: "Awards Won" },
     { icon: <Heart size={24} />, value: "250+", label: "Happy Clients" },
     { icon: <Clock size={24} />, value: "1200+", label: "Photo Sessions" },
   ];
 
+  const founders = [
+    {
+      name: "Devansh Shankar",
+      role: "Founder & Lead Photographer",
+      image: FOUNDER,
+      bio: "With over 5 years of experience, Devansh has developed a unique visual style that blends artistic composition with authentic emotion. His work has been featured in several exhibitions and publications."
+    },
+    {
+      name: "Aarav Mehta",
+      role: "Co-Founder & Creative Director",
+      image: COFOUNDER,
+      bio: "Aarav brings his expertise in visual storytelling and creative direction to every project. His background in fine arts and digital media helps shape the studio's distinctive aesthetic approach."
+    },
+  ];
+
   return (
-    <section
-      id="about"
-      className="py-24 bg-black text-white relative overflow-hidden"
-    >
-      {/* Background subtle pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: ABOUTME,
-            backgroundSize: "400px",
-            backgroundRepeat: "repeat",
-            opacity: 0.03,
-          }}
-        ></div>
-      </div>
-
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
-        {/* Section heading with animated underline */}
-        <div className="max-w-4xl mx-auto">
-          <div className="flex flex-col items-center justify-center mb-16">
-            <p className="text-white/60 uppercase tracking-widest text-xs mb-3">
-              The Person Behind The Lens
+    <section id="about" className="py-20 bg-black text-white">
+      <div className="container mx-auto px-6">
+        {/* Studio Section */}
+        <div 
+          ref={studioRef}
+          className="opacity-0 transform translate-y-8 transition-all duration-1000"
+        >
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-serif mb-6">About Our Studio</h2>
+            <div className="h-px w-16 bg-white/40 mx-auto mb-8"></div>
+            
+            <p className="text-white/80 leading-relaxed mb-8">
+              We're <strong className="text-white">Devansh Shankar Films</strong>, a professional photography studio with a passion for storytelling through visual art. Based in Mumbai but working worldwide, we specialize in transforming fleeting moments into timeless treasures.
             </p>
-            <h2 className="text-3xl md:text-5xl font-serif tracking-wide relative inline-flex flex-col items-center">
-              About Me
-              <span className="h-px w-16 bg-gradient-to-r from-transparent via-white to-transparent mt-6"></span>
-            </h2>
+            
+            <p className="text-white/80 leading-relaxed">
+              Our approach combines technical excellence with an artistic vision, allowing us to create imagery that resonates with emotion and authenticity. Whether capturing wedding celebrations, portrait sessions, or commercial projects, we bring the same dedication to creating photographs that tell your unique story.
+            </p>
           </div>
-
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            {/* Image with parallax effect */}
-            <div className="relative" ref={imageRef}>
-              <div className="aspect-[4/5] overflow-hidden bg-gray-900">
-                <img
-                  src={ABOUTME}
-                  alt="Devansh Shankar - Professional Photographer"
-                  className="w-full h-full object-cover opacity-90 transition-transform duration-700 hover:scale-105 hover:opacity-100"
-                />
-              </div>
-
-              {/* Decorative elements */}
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 border border-white/20 z-10"></div>
-              <div className="absolute -top-6 -left-6 w-32 h-32 border border-white/20 z-10"></div>
-              <div className="absolute bottom-6 right-6 w-16 h-16 border border-white/50 z-10"></div>
-              <div className="absolute top-6 left-6 w-16 h-16 border border-white/50 z-10"></div>
-
-              {/* Signature overlay */}
-              <div className="absolute -bottom-12 right-0 transform rotate-6">
-                <span className="font-serif italic text-2xl text-white/80">
-                  Devansh
-                </span>
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="space-y-8" ref={contentRef}>
-              <div>
-                <h3 className="text-2xl md:text-3xl font-serif mb-6 text-white font-light tracking-wide">
-                  Capturing{" "}
-                  <span className="relative inline-block">
-                    moments
-                    <span className="absolute -bottom-1 left-0 right-0 h-px bg-white/30"></span>
-                  </span>{" "}
-                  that last forever
-                </h3>
-
-                <div className="space-y-6 text-white/80">
-                  <p className="leading-relaxed">
-                    I'm <strong className="text-white">Devansh Shankar</strong>,
-                    a professional photographer with a passion for storytelling
-                    through visual art. Based in Mumbai but working worldwide, I
-                    specialize in transforming fleeting moments into timeless
-                    treasures.
-                  </p>
-
-                  <p className="leading-relaxed">
-                    My journey began over a decade ago with a simple camera and
-                    an insatiable curiosity about the world. Today, that same
-                    curiosity drives me to explore the delicate interplay
-                    between light, emotion, and composition in every frame I
-                    capture.
-                  </p>
-
-                  <p className="leading-relaxed">
-                    Whether I'm shooting breathtaking landscapes, intimate
-                    portraits, or documenting precious wedding moments, my
-                    philosophy remains consistent: to reveal the extraordinary
-                    in seemingly ordinary moments.
-                  </p>
-                </div>
-              </div>
-
-              {/* Quote */}
-              <blockquote className="pl-6 border-l border-white/30 italic text-white/70 my-8">
-                "Photography is the story I fail to put into words."
-              </blockquote>
-
-              {/* Button */}
-              <div className="pt-2">
-                <a
-                  href="#contact"
-                  className="inline-block px-8 py-3 border border-white/30 hover:border-white/60 text-white/90 hover:text-white transition-colors duration-300 uppercase tracking-wider text-sm"
-                >
-                  Let's Work Together
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Stats section */}
-          <div
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-24 opacity-0 translate-y-8 transition-all duration-1000"
-            ref={statsRef}
-            style={{ transitionDelay: "300ms" }}
-          >
+          
+          {/* Stats */}
+          <div className="grid grid-cols-3 gap-6 max-w-3xl mx-auto">
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="text-center p-6 border border-white/10 bg-white/5 backdrop-blur-sm flex flex-col items-center"
-                style={{ transitionDelay: `${index * 100 + 300}ms` }}
+                className="text-center p-6 border border-white/10 bg-white/5"
               >
                 <div className="text-white/60 mb-3">{stat.icon}</div>
-                <div className="text-3xl font-serif text-white mb-1">
+                <div className="text-2xl font-serif text-white mb-1">
                   {stat.value}
                 </div>
-                <div className="text-white/60 text-sm uppercase tracking-wider">
+                <div className="text-white/60 text-sm">
                   {stat.label}
                 </div>
               </div>
             ))}
           </div>
         </div>
+        
+        {/* Divider */}
+        <div className="my-20 h-px w-full bg-white/10"></div>
+        
+        {/* Founders Section */}
+        <div 
+          ref={foundersRef}
+          className="opacity-0 transform translate-y-8 transition-all duration-1000 delay-500"
+        >
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-serif mb-6">Meet Our Founders</h2>
+            <div className="h-px w-16 bg-white/40 mx-auto mb-8"></div>
+            <p className="text-white/80 max-w-3xl mx-auto">
+              Our studio is led by two passionate photographers with complementary skills and a shared vision for creating remarkable imagery.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            {founders.map((founder, index) => (
+              <div key={index} className="text-center md:text-left">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+                  {/* Image */}
+                  <div className="w-48 h-48 rounded-full overflow-hidden border-2 border-white/10 mb-6 md:mb-0 flex-shrink-0">
+                    <img
+                      src={founder.image}
+                      alt={founder.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  
+                  {/* Content */}
+                  <div>
+                    <h3 className="text-xl font-serif text-white mb-2">
+                      {founder.name}
+                    </h3>
+                    <p className="text-white/60 text-sm mb-4">{founder.role}</p>
+                    <p className="text-white/80">
+                      {founder.bio}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          {/* Contact CTA */}
+          <div className="mt-16 text-center">
+            <a
+              href="#contact"
+              className="inline-block px-8 py-3 border border-white/30 hover:border-white/60 text-white/90 hover:text-white transition-colors duration-300"
+            >
+              Work With Us
+            </a>
+          </div>
+        </div>
       </div>
-
+      
       {/* CSS for animations */}
       <style jsx>{`
-        .animate-in {
+        .fade-in {
           opacity: 1 !important;
           transform: translateY(0) !important;
         }
