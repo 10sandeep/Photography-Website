@@ -9,12 +9,12 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <a href="#hero" className="text-xl font-serif text-white tracking-wider">
-              ELENA NOIR
+              DEVANSH SHANKAR FILMS
             </a>
           </div>
           
           <div className="text-sm">
-            <p>&copy; {currentYear} Elena Noir Photography. All rights reserved.</p>
+            <p>&copy; {currentYear} DEVANSH SHANKAR FILMS. All rights reserved.</p>
           </div>
           
           <div className="mt-4 md:mt-0">
