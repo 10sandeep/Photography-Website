@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --black: #0A0A0A;
+  --white: #FAFAFA;
+  --gold: #D4AF37;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) var(--black);
+}
+
+body {
+  @apply bg-black text-white font-sans dark:bg-black dark:text-white;
+  cursor: none;
+}
+
+/* Hide cursor on devices that have one */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+/* But show cursor on mobile/touch devices */
+@media (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+  
+  .cursor-container {
+    display: none;
+  }
+}
+
+.font-serif {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.bg-gold {
+  background-color: var(--gold);
+}
+
+.border-gold {
+  border-color: var(--gold);
+}
+
+/* Light mode overrides */
+.light {
+  --black: #FAFAFA;
+  --white: #0A0A0A;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.light .bg-black {
+  background-color: var(--black);
+}
+
+.light .text-white {
+  color: var(--white);
+}
+
+.light .border-white {
+  border-color: var(--white);
+}
+
+/* Custom animations */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
+
+.animate-fade-in-delayed {
+  animation: fade-in 1s ease-out 0.3s forwards;
+}
+
+.animate-fade-in-more-delayed {
+  animation: fade-in 1s ease-out 0.6s forwards;
+}
+
+@keyframes pulse-scale {
+  0% { transform: scale(0.8); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(0.8); }
+}
+
+.animate-pulse-scale {
+  animation: pulse-scale 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-fade {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+.animate-pulse-fade {
+  animation: pulse-fade 1.5s ease-in-out infinite;
+}
+
+/* Custom cursor styles */
+.cursor-click {
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+/* Add Cormorant Garamond font */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap');
