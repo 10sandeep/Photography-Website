@@ -4,11 +4,11 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-black py-10 text-white/70">
+    <footer className="bg-black/90 py-10 text-white/70">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <a href="#hero" className="text-xl font-serif text-white tracking-wider">
+            <a href="#hero" className="text-xl font-serif text-white/60 tracking-wider">
               DEVANSH SHANKAR FILMS
             </a>
           </div>

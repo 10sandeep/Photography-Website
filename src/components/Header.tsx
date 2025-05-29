@@ -30,6 +30,20 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
   const handleNavClick = (sectionId) => {
     setMobileMenuOpen(false);
     setActiveSection(sectionId);
@@ -137,43 +151,59 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 bg-black/95 backdrop-blur-lg flex flex-col items-center justify-center z-40 transition-all duration-500 ${
+        className={`md:hidden fixed inset-0 z-40 transition-all duration-500 ${
           mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
+        style={{ 
+          background: 'rgba(0, 0, 0, 0.95)',
+          backdropFilter: 'blur(12px)'
+        }}
       >
-        <nav className="flex flex-col items-center space-y-6">
-          {navItems.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick(item.id);
-              }}
-              className={`text-2xl font-light tracking-wider transition-colors duration-300 relative ${
-                activeSection === item.id ? 'text-white' : 'text-white/60 hover:text-white'
-              }`}
-            >
-              {item.name}
-              {activeSection === item.id && (
-                <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-6 h-px bg-white/50" />
-              )}
-            </a>
-          ))}
-          
-          {/* Social Media - Mobile */}
-          <div className="flex items-center space-x-6 mt-8 pt-8 border-t border-white/10 w-40">
-            <a href="#" className="text-white/60 hover:text-white transition-colors duration-300">
-              <Instagram size={20} />
-            </a>
-            <a href="#" className="text-white/60 hover:text-white transition-colors duration-300">
-              <Twitter size={20} />
-            </a>
-            <a href="#" className="text-white/60 hover:text-white transition-colors duration-300">
-              <Linkedin size={20} />
-            </a>
-          </div>
-        </nav>
+        {/* Close Button for Mobile Menu */}
+        <button
+          onClick={() => setMobileMenuOpen(false)}
+          className="absolute top-6 right-6 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 z-50"
+          aria-label="Close menu"
+        >
+          <X size={24} className="text-white" />
+        </button>
+
+        {/* Centered Navigation */}
+        <div className="flex items-center bg-black/90 justify-center min-h-screen text-white/30">
+          <nav className="flex flex-col items-center space-y-6">
+            {navItems.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick(item.id);
+                }}
+                className={`text-2xl font-light tracking-wider transition-colors duration-300 relative ${
+                  activeSection === item.id ? 'text-white/40' : 'text-white/60 hover:text-white/40'
+                }`}
+              >
+                {item.name}
+                {activeSection === item.id && (
+                  <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-6 h-px bg-white/50" />
+                )}
+              </a>
+            ))}
+            
+            {/* Social Media - Mobile */}
+            <div className="flex items-center space-x-6 mt-8 pt-8 border-t border-white/10 w-40">
+              <a href="#" className="text-white/60 hover:text-white transition-colors duration-300">
+                <Instagram size={20} />
+              </a>
+              <a href="#" className="text-white/60 hover:text-white transition-colors duration-300">
+                <Twitter size={20} />
+              </a>
+              <a href="#" className="text-white/60 hover:text-white transition-colors duration-300">
+                <Linkedin size={20} />
+              </a>
+            </div>
+          </nav>
+        </div>
       </div>
     </header>
   );
