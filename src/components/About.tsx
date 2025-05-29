@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Camera, Heart, Clock } from "lucide-react";
+import { Camera, Heart, Clock, Instagram, Mail, Phone } from "lucide-react";
 
 const About = () => {
   const studioRef = useRef(null);
@@ -41,13 +41,23 @@ const About = () => {
       name: "Jayadratha Nayak",
       role: "Founder & Lead Photographer",
       image: "https://res.cloudinary.com/djtgnaque/image/upload/v1748523397/Founder_zwqafy.jpg",
-      bio: "With over 5 years of experience, Jayadratha has developed a unique visual style that blends artistic composition with authentic emotion. His work has been featured in several exhibitions and publications."
+      bio: "With over 5 years of experience, Jayadratha has developed a unique visual style that blends artistic composition with authentic emotion. His work has been featured in several exhibitions and publications.",
+      contact: {
+        instagram: "@_dear._.comrade__2.0/",
+        email: "Myselfbablu123@gmail.com",
+        phone: "+91 7735181866"
+      }
     },
     {
       name: "Bhabani Shankar Behera",
       role: "Co-Founder & Creative Director",
       image: "https://res.cloudinary.com/djtgnaque/image/upload/v1748523398/Co-Founder_fqszg0.jpg",
-      bio: "Bhabani brings his expertise in visual storytelling and creative direction to every project. His background in fine arts and digital media helps shape the studio's distinctive aesthetic approach."
+      bio: "Bhabani brings his expertise in visual storytelling and creative direction to every project. His background in fine arts and digital media helps shape the studio's distinctive aesthetic approach.",
+      contact: {
+        instagram: "@bhabani_creative",
+        email: "bhabani@devanshfilms.com",
+        phone: "+91 87654 32109"
+      }
     },
   ];
 
@@ -121,14 +131,49 @@ const About = () => {
                   </div>
                   
                   {/* Content */}
-                  <div>
+                  <div className="flex-1">
                     <h3 className="text-xl font-serif text-white mb-2">
                       {founder.name}
                     </h3>
                     <p className="text-white/60 text-sm mb-4">{founder.role}</p>
-                    <p className="text-white/80">
+                    <p className="text-white/80 mb-6">
                       {founder.bio}
                     </p>
+                    
+                    {/* Contact Information */}
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-center md:justify-start gap-3">
+                        <Instagram size={16} className="text-white/60" />
+                        <a 
+                          href={`https://instagram.com/${founder.contact.instagram.replace('@', '')}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-white/80 hover:text-white transition-colors duration-300 text-sm"
+                        >
+                          {founder.contact.instagram}
+                        </a>
+                      </div>
+                      
+                      <div className="flex items-center justify-center md:justify-start gap-3">
+                        <Mail size={16} className="text-white/60" />
+                        <a 
+                          href={`mailto:${founder.contact.email}`}
+                          className="text-white/80 hover:text-white transition-colors duration-300 text-sm"
+                        >
+                          {founder.contact.email}
+                        </a>
+                      </div>
+                      
+                      <div className="flex items-center justify-center md:justify-start gap-3">
+                        <Phone size={16} className="text-white/60" />
+                        <a 
+                          href={`tel:${founder.contact.phone.replace(/\s/g, '')}`}
+                          className="text-white/80 hover:text-white transition-colors duration-300 text-sm"
+                        >
+                          {founder.contact.phone}
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
