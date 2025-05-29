@@ -63,11 +63,18 @@ const Header = () => {
           className="flex items-center group"
         >
           <div className={`mr-2 transition-all duration-300 ${isScrolled ? 'scale-75' : 'scale-100'}`}>
-            <Camera className="h-6 w-6 text-white group-hover:text-white/80 transition-colors duration-300" strokeWidth={1.5} />
+            <Camera className="h-6 w-6 text-white/70 group-hover:text-white/80 transition-colors duration-300" strokeWidth={1.5} />
           </div>
-          <span className={`font-serif text-white tracking-widest transition-all duration-300 flex items-center ${isScrolled ? 'text-xl' : 'text-2xl md:text-3xl'}`}>
+          
+          {/* Desktop Logo */}
+          <span className={`hidden sm:flex font-serif text-white/100 tracking-widest transition-all duration-300 items-center ${isScrolled ? 'text-xl' : 'text-2xl md:text-3xl'}`}>
             <span className="font-light">DEVANSH</span>
             <span className="ml-2 text-white/80">SHANKAR FILMS</span>
+          </span>
+          
+          {/* Mobile Logo */}
+          <span className={`sm:hidden font-serif text-white/100 tracking-widest transition-all duration-300 ${isScrolled ? 'text-xl' : 'text-2xl'}`}>
+            <span className="font-medium">DSF</span>
           </span>
         </a>
 
@@ -83,8 +90,8 @@ const Header = () => {
               }}
               className={`px-4 py-2 text-sm uppercase tracking-wider relative transition-colors duration-300 ${
                 activeSection === item.id
-                  ? 'text-white font-medium'
-                  : 'text-white/70 hover:text-white'
+                  ? 'text-white/70 font-medium'
+                  : 'text-white/100 hover:text-white'
               }`}
             >
               {item.name}

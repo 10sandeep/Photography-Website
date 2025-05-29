@@ -40,7 +40,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-32 relative text-white overflow-hidden bg-black">
+    <section id="contact" className="py-32 relative  overflow-hidden bg-black/100">
       {/* Background with subtle texture */}
       <div className="absolute inset-0 z-0">
         <div 
@@ -64,9 +64,9 @@ const Contact = () => {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-serif mb-6 tracking-wider">
-              <span className="inline-block relative">
+              <span className="inline-block relative text-white/90">
                 Contact
-                <span className="absolute -bottom-3 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent"></span>
+                <span className="absolute -bottom-3 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-900 to-transparent"></span>
               </span>
             </h2>
             <p className="text-gray-400 max-w-xl mx-auto font-light">
@@ -78,7 +78,7 @@ const Contact = () => {
             {/* Contact Info - 2 columns on md screens */}
             <div className="md:col-span-2 space-y-10">
               <div>
-                <h3 className="text-2xl font-serif mb-6 text-white">Studio Details</h3>
+                <h3 className="text-2xl font-serif mb-6 text-white/60">Studio Details</h3>
                 
                 <div className="space-y-6">
                   <div className="flex items-start group">
@@ -87,7 +87,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-medium text-gray-200">Studio Location</h4>
-                      <p className="text-gray-500 mt-1">123 Photography Lane,<br />Paris, France</p>
+                      <p className="text-gray-500 mt-1">Bhuban Bus Stand,Bhuban<br />Dhenkanal,Odisha,759017</p>
                     </div>
                   </div>
                   
@@ -97,7 +97,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-medium text-gray-200">Contact Number</h4>
-                      <p className="text-gray-500 mt-1">+33 (0) 1 23 45 67 89</p>
+                      <p className="text-gray-500 mt-1">+91 7751921276</p>
                     </div>
                   </div>
                   
@@ -107,14 +107,14 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-medium text-gray-200">Email Address</h4>
-                      <p className="text-gray-500 mt-1">hello@elenanoir.com</p>
+                      <p className="text-gray-500 mt-1">devanshshankarfilms@gmail.com</p>
                     </div>
                   </div>
                 </div>
               </div>
               
               <div>
-                <h3 className="text-xl font-serif mb-4 text-white">Working Hours</h3>
+                <h3 className="text-xl font-serif mb-4 text-white/80">Working Hours</h3>
                 <div className="space-y-2 text-gray-500">
                   <p className="flex justify-between border-b border-zinc-800 pb-2">
                     <span>Monday - Friday</span>
@@ -132,9 +132,9 @@ const Contact = () => {
               </div>
               
               <div>
-                <h3 className="text-xl font-serif mb-5 text-white">Follow My Work</h3>
+                <h3 className="text-xl font-serif mb-5 text-white/80">Follow My Work</h3>
                 <div className="flex space-x-4">
-                  <a href="#" className="group">
+                  <a href="https://www.instagram.com/devanshshankarfilms/" className="group">
                     <div className="h-12 w-12 rounded-full bg-zinc-900 flex items-center justify-center border border-zinc-800 group-hover:border-white/30 group-hover:bg-zinc-800 transition-all duration-300">
                       <Instagram className="h-5 w-5 text-gray-400 group-hover:text-white transition-colors duration-300" />
                     </div>
@@ -157,7 +157,7 @@ const Contact = () => {
             <div className="md:col-span-3 relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-white/5 via-white/10 to-white/5 rounded-lg blur" />
               <div className="relative bg-zinc-900/80 border border-zinc-800 p-8 rounded-lg">
-                <h3 className="text-2xl font-serif mb-6 text-white">Send a Message</h3>
+                <h3 className="text-2xl font-serif mb-6 text-white/80">Send a Message</h3>
                 
                 {isSubmitted ? (
                   <div className="flex flex-col items-center justify-center py-10 text-center">

@@ -52,7 +52,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-black text-white">
+    <section id="about" className="py-20 bg-black/100 text-white/90">
       <div className="container mx-auto px-6">
         {/* Studio Section */}
         <div 
@@ -61,10 +61,10 @@ const About = () => {
         >
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-serif mb-6">About Our Studio</h2>
-            <div className="h-px w-16 bg-white/40 mx-auto mb-8"></div>
+            <div className="h-px w-16 bg-white/50 mx-auto mb-8"></div>
             
             <p className="text-white/80 leading-relaxed mb-8">
-              We're <strong className="text-white">Devansh Shankar Films</strong>, a professional photography studio with a passion for storytelling through visual art. Based in Mumbai but working worldwide, we specialize in transforming fleeting moments into timeless treasures.
+              We're <strong className="text-white/80">Devansh Shankar Films</strong>, a professional photography studio with a passion for storytelling through visual art. Based in Mumbai but working worldwide, we specialize in transforming fleeting moments into timeless treasures.
             </p>
             
             <p className="text-white/80 leading-relaxed">
@@ -80,7 +80,7 @@ const About = () => {
                 className="text-center p-6 border border-white/10 bg-white/5"
               >
                 <div className="text-white/60 mb-3 flex justify-center">{stat.icon}</div>
-                <div className="text-2xl font-serif text-white mb-1">
+                <div className="text-2xl font-serif text-white/80 mb-1">
                   {stat.value}
                 </div>
                 <div className="text-white/60 text-sm">

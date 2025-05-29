@@ -49,7 +49,7 @@ const Hero = () => {
         {/* Logo/icon */}
         <div className={`mb-6 transform ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'} transition-all duration-1000 ease-out`}>
           <div className="inline-flex items-center justify-center p-2 rounded-full border-2 border-white/30 mb-8">
-            <Camera size={36} className="text-white" strokeWidth={1.5} />
+            <Camera size={36} className="text-white/80" strokeWidth={1.5} />
           </div>
         </div>
         
@@ -59,7 +59,7 @@ const Hero = () => {
           className={`text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-6 tracking-wider ${loaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000 delay-300`}
         >
           <span className="block overflow-hidden">
-            <span className="block transform font-light">DEVANSH SHANKAR</span>
+            <span className="block transform text-white/80 font-light">DEVANSH SHANKAR</span>
           </span>
           <span className="block mt-2 text-2xl md:text-3xl lg:text-4xl text-white/80 font-light tracking-widest">FILMS</span>
         </h1>
@@ -76,14 +76,14 @@ const Hero = () => {
         <div className={`flex flex-col md:flex-row gap-6 mt-8 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-all duration-1000 delay-1200`}>
           <button
             onClick={scrollToPortfolio}
-            className="px-8 py-3 bg-white/10 backdrop-blur-sm border border-white/30 text-white hover:bg-white/20 transition-colors duration-300 uppercase tracking-widest text-sm group flex items-center justify-center"
+            className="px-8 py-3 bg-white/10 backdrop-blur-sm border border-white/30 text-white/80 hover:bg-white/20 transition-colors duration-300 uppercase tracking-widest text-sm group flex items-center justify-center"
           >
             View Portfolio
             <ChevronDown size={16} className="ml-2 group-hover:translate-y-1 transition-transform" />
           </button>
           <a
             href="#contact"
-            className="px-8 py-3 bg-transparent border border-white/30 text-white hover:bg-white/10 transition-colors duration-300 uppercase tracking-widest text-sm"
+            className="px-8 py-3 bg-transparent border border-white/30 text-white/80  hover:bg-white/10 transition-colors duration-300 uppercase tracking-widest text-sm"
           >
             Book a Session
           </a>

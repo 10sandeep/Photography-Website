@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap');
+
 :root {
   --black: #0A0A0A;
   --white: #FAFAFA;
@@ -31,7 +33,7 @@ body {
   body {
     cursor: auto;
   }
-  
+
   .cursor-container {
     display: none;
   }
@@ -115,6 +117,3 @@ body {
 .cursor-click {
   transform: translate(-50%, -50%) scale(0.8);
 }
-
-/* Add Cormorant Garamond font */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap');

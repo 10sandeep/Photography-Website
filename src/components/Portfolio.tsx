@@ -11,7 +11,7 @@ const Portfolio: React.FC = () => {
     : portfolioData.filter(item => item.category === activeCategory);
 
   return (
-    <section id="portfolio" className="py-24 bg-gray-950 text-white">
+    <section id="portfolio" className="py-24 bg-black/90 text-white/90">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-serif mb-16 text-center tracking-wider">
           <span className="inline-block relative">

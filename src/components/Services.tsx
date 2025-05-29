@@ -137,7 +137,7 @@ const Services = () => {
   }, []);
 
   return (
-    <section id="services" className="py-24 bg-black relative overflow-hidden">
+    <section id="services" className="py-24 bg-black/100 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-white/5 to-transparent opacity-30"></div>
       <div className="absolute bottom-0 right-0 w-full h-64 bg-gradient-to-t from-white/5 to-transparent opacity-30"></div>
@@ -148,7 +148,7 @@ const Services = () => {
         {/* Section Heading */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-white/60 uppercase tracking-widest text-xs mb-3">Professional Offerings</p>
-          <h2 className="text-3xl md:text-5xl font-serif tracking-wide text-white mb-6">
+          <h2 className="text-3xl md:text-5xl font-serif tracking-wide text-white/90 mb-6">
             My Services
           </h2>
           <div className="h-px w-24 bg-gradient-to-r from-transparent via-white/50 to-transparent mx-auto mb-6"></div>
@@ -165,7 +165,7 @@ const Services = () => {
               onClick={() => setSelectedService(service.id)}
               className={`px-4 py-2 text-sm border transition-all duration-300 ${
                 selectedService === service.id
-                  ? 'border-white/60 text-white bg-white/10'
+                  ? 'border-white/60 text-white/40 bg-white/10'
                   : 'border-white/20 text-white/60 hover:border-white/40 hover:text-white/80'
               }`}
             >
@@ -176,7 +176,7 @@ const Services = () => {
             onClick={() => setSelectedService(null)}
             className={`px-4 py-2 text-sm border transition-all duration-300 ${
               selectedService === null
-                ? 'border-white/60 text-white bg-white/10'
+                ? 'border-white/60 text-white/60 bg-white/10'
                 : 'border-white/20 text-white/60 hover:border-white/40 hover:text-white/80'
             }`}
           >
@@ -199,7 +199,7 @@ const Services = () => {
               >
                 {/* Popular Badge */}
                 {service.popular && (
-                  <div className="absolute top-0 right-0 bg-white/20 backdrop-blur-sm py-1 px-3 text-xs uppercase tracking-wider text-white z-20">
+                  <div className="absolute top-0 right-0 bg-white/20 backdrop-blur-sm py-1 px-3 text-xs uppercase tracking-wider text-white/60 z-20">
                     Popular Choice
                   </div>
                 )}
@@ -211,14 +211,14 @@ const Services = () => {
                       {service.icon}
                     </div>
                     <div className="flex items-baseline">
-                      <span className="text-2xl font-serif text-white">{service.price}</span>
+                      <span className="text-2xl font-serif text-white/90">{service.price}</span>
                       {service.suffix && (
                         <span className="ml-1 text-white/70 text-sm">{service.suffix}</span>
                       )}
                     </div>
                   </div>
                   
-                  <h3 className="text-xl md:text-2xl font-serif text-white mb-3">{service.title}</h3>
+                  <h3 className="text-xl md:text-2xl font-serif text-white/90 mb-3">{service.title}</h3>
                   <p className="text-white/70 mb-6">{service.description}</p>
                   
                   <ul className="space-y-3 mb-6 mt-auto">
@@ -243,7 +243,7 @@ const Services = () => {
                   <div className="mt-2">
                     <a
                       href="#contact"
-                      className="inline-block px-6 py-2 border border-white/30 text-white hover:bg-white/10 transition-all duration-300 uppercase tracking-wider text-sm group-hover:border-white/60"
+                      className="inline-block px-6 py-2 border border-white/30 text-white/80 hover:bg-white/10 transition-all duration-300 uppercase tracking-wider text-sm group-hover:border-white/60"
                     >
                       Book Now
                     </a>
@@ -263,9 +263,9 @@ const Services = () => {
           </p>
           <a
             href="#contact"
-            className="inline-flex items-center px-8 py-3 border border-white/30 bg-white/5 backdrop-blur-sm text-white hover:bg-white/10 transition-all duration-300 uppercase tracking-wider text-sm"
+            className="inline-flex items-center px-8 py-3 border border-white/30 bg-white/5 backdrop-blur-sm text-white/70 hover:bg-white/10 transition-all duration-300 uppercase tracking-wider text-sm"
           >
-            <MapPin size={16} className="mr-2" />
+            <MapPin size={16} className="mr-2 text-white/70" />
             Request Custom Quote
           </a>
         </div>
