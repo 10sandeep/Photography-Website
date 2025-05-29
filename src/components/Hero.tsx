@@ -35,7 +35,7 @@ const Hero = () => {
         <div
           className="absolute inset-0 bg-center bg-cover h-screen"
           style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1502982720700-bfff97f2ecac?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
+            backgroundImage: 'url("https://images.unsplash.com/photo-1622482319442-7c95d8ca5260?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
             transform: 'scale(1.1)'
           }}
         />

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { Camera, Heart, Clock } from "lucide-react";
-import FOUNDER from '../assets/founder.jpg'
-import COFOUNDER from '../assets/cofounder.jpg'
+import FOUNDER from '../assets/Founder.jpg'
+import COFOUNDER from '../assets/Co-Founder.jpg'
 
 const About = () => {
   const studioRef = useRef(null);
@@ -37,16 +37,16 @@ const About = () => {
 
   const founders = [
     {
-      name: "Devansh Shankar",
+      name: "Jayadratha Nayak",
       role: "Founder & Lead Photographer",
       image: FOUNDER,
-      bio: "With over 5 years of experience, Devansh has developed a unique visual style that blends artistic composition with authentic emotion. His work has been featured in several exhibitions and publications."
+      bio: "With over 5 years of experience,Jayadratha has developed a unique visual style that blends artistic composition with authentic emotion. His work has been featured in several exhibitions and publications."
     },
     {
-      name: "Aarav Mehta",
+      name: "Bhabani Shankar Behera",
       role: "Co-Founder & Creative Director",
       image: COFOUNDER,
-      bio: "Aarav brings his expertise in visual storytelling and creative direction to every project. His background in fine arts and digital media helps shape the studio's distinctive aesthetic approach."
+      bio: "Bhabani brings his expertise in visual storytelling and creative direction to every project. His background in fine arts and digital media helps shape the studio's distinctive aesthetic approach."
     },
   ];
 
