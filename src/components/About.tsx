@@ -41,7 +41,7 @@ const About = () => {
       name: "Jayadratha Nayak",
       role: "Founder & Lead Photographer",
       image: "https://res.cloudinary.com/djtgnaque/image/upload/v1748523397/Founder_zwqafy.jpg",
-      bio: "With over 5 years of experience, Jayadratha has developed a unique visual style that blends artistic composition with authentic emotion. His work has been featured in several exhibitions and publications.",
+      bio: "Jayadratha has developed a unique visual style that blends artistic composition with authentic emotion. His work has been featured in several exhibitions and publications.",
       contact: {
         instagram: "@_dear._.comrade__2.0/",
         email: "Myselfbablu123@gmail.com",
