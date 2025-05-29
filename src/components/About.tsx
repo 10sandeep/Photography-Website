@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Camera, Heart, Clock } from "lucide-react";
-import FOUNDER from '../assets/Founder.jpg'
+import FOUNDER from'../assets/Founder.jpg'
 import COFOUNDER from '../assets/Co-Founder.jpg'
 
 const About = () => {
