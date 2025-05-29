@@ -1,7 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import { Camera, Heart, Clock } from "lucide-react";
-import FOUNDER from'../assets/Founder.jpg'
-import COFOUNDER from '../assets/Co-Founder.jpg'
 
 const About = () => {
   const studioRef = useRef(null);
@@ -13,7 +11,10 @@ const About = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("fade-in");
+            entry.target.classList.add("opacity-100");
+            entry.target.classList.add("translate-y-0");
+            entry.target.classList.remove("opacity-0");
+            entry.target.classList.remove("translate-y-8");
           }
         });
       },
@@ -39,13 +40,13 @@ const About = () => {
     {
       name: "Jayadratha Nayak",
       role: "Founder & Lead Photographer",
-      image: FOUNDER,
-      bio: "With over 5 years of experience,Jayadratha has developed a unique visual style that blends artistic composition with authentic emotion. His work has been featured in several exhibitions and publications."
+      image: "https://res.cloudinary.com/djtgnaque/image/upload/v1748523397/Founder_zwqafy.jpg",
+      bio: "With over 5 years of experience, Jayadratha has developed a unique visual style that blends artistic composition with authentic emotion. His work has been featured in several exhibitions and publications."
     },
     {
       name: "Bhabani Shankar Behera",
       role: "Co-Founder & Creative Director",
-      image: COFOUNDER,
+      image: "https://res.cloudinary.com/djtgnaque/image/upload/v1748523398/Co-Founder_fqszg0.jpg",
       bio: "Bhabani brings his expertise in visual storytelling and creative direction to every project. His background in fine arts and digital media helps shape the studio's distinctive aesthetic approach."
     },
   ];
@@ -78,7 +79,7 @@ const About = () => {
                 key={index}
                 className="text-center p-6 border border-white/10 bg-white/5"
               >
-                <div className="text-white/60 mb-3">{stat.icon}</div>
+                <div className="text-white/60 mb-3 flex justify-center">{stat.icon}</div>
                 <div className="text-2xl font-serif text-white mb-1">
                   {stat.value}
                 </div>
@@ -145,14 +146,6 @@ const About = () => {
           </div>
         </div>
       </div>
-      
-      {/* CSS for animations */}
-      <style jsx>{`
-        .fade-in {
-          opacity: 1 !important;
-          transform: translateY(0) !important;
-        }
-      `}</style>
     </section>
   );
 };
